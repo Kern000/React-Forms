@@ -39,7 +39,7 @@ export default class ComponentMountRestaurant extends React.Component{
         return(
             <React.Fragment>
                 <div>
-                    <label> First Name: </label>
+                    <label className="form-control"> First Name: </label>
                     <input  type="text"
                             name="firstName"
                             value={this.state.firstName}
@@ -47,7 +47,7 @@ export default class ComponentMountRestaurant extends React.Component{
                     />
                 </div>
                 <div>
-                    <label> Last Name: </label>
+                    <label className="form-control"> Last Name: </label>
                     <input  type="text"
                             name="lastName"
                             value={this.state.lastName}
@@ -55,14 +55,14 @@ export default class ComponentMountRestaurant extends React.Component{
                     />
                 </div>
                 <div>
-                    <label> Seating Type: </label>
+                    <label className="form-control"> Seating Type: </label>
                     <br/>
-                    <label> Outdoors </label>
                     {this.state.all_seating.map((seating)=>
                         <React.Fragment>
                             <input  type="radio"
                                     name="seating"
                                     value={seating.value}
+                                    className="form-check-input"
                                     key={seating.value}
                                     checked={this.state.seating===seating.value}
                                     onChange={this.updateFormField}
@@ -71,7 +71,7 @@ export default class ComponentMountRestaurant extends React.Component{
                     )}
                 </div>
                 <div>
-                    <label> Smoking or Non-smoking: </label>
+                    <label className="form-control"> Smoking or Non-smoking: </label>
                     <select name="smoking" value={this.state.smoking} onChange={this.updateFormField}>
                         {this.state.all_smoking.map((smoke)=>
                             <option value={smoke.value}
@@ -81,7 +81,7 @@ export default class ComponentMountRestaurant extends React.Component{
                     </select>
                 </div>
                 <div>
-                    <label> Appetizer: </label>
+                    <label className="form-control"> Appetizer: </label>
                     {this.state.all_appetizer.map((appetizer)=>
                         <React.Fragment>
                         <input  type="checkbox"
