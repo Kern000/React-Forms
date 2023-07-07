@@ -13,7 +13,7 @@ export default class ComponentMount extends React.Component{
         "all_countries":[]
     }
 
-    // componentDidMount(){
+    // componentDidMountCheck(){
     //     axios.get('./json/colours.json').then(r=>this.fruits=r.data);
     //     axios.get('./json/countries.json').then(r=>this.colours=r.data);
     //     axios.get('./json/fruits.json').then(r=>this.fruits=r.data);
@@ -39,7 +39,8 @@ export default class ComponentMount extends React.Component{
     renderColours(){
         let options=[];
         for (let colour of this.state.all_colours){
-            let element= <React.Fragment key={colour.value}>
+            let element= 
+            <React.Fragment key={colour.value}>
                 <input  name="colour" 
                         type="radio" 
                         value={colour.value}
@@ -122,4 +123,5 @@ export default class ComponentMount extends React.Component{
 // 2nd function is similar, but goes on to setstate
 // put all_fruits, colours, countries into state (instead of as a [] in the class) because component will render before componentDidMount, and so by putting in state, the component will re-render when data comes in and the state change.
 
-
+// in axios, the json needs to be in the public folder for axios to access
+// axios will access based on ./ or /json file path directly at root folder

@@ -16,7 +16,7 @@ export default class ComponentMountRestaurant extends React.Component{
         "all_appetizer":[]
     }
 
-    async ComponentDidMount(){
+    async componentDidMount(){
         let response=await axios.get("./json/seating.json");
         let all_seating=response.data;
 
@@ -78,19 +78,20 @@ export default class ComponentMountRestaurant extends React.Component{
                                     key={smoke.value}
                                     > {smoke.display} </option>
                             )}
-
                     </select>
                 </div>
                 <div>
                     <label> Appetizer: </label>
                     {this.state.all_appetizer.map((appetizer)=>
+                        <React.Fragment>
                         <input  type="checkbox"
                                 name="appetizer"
                                 value={appetizer.value}
                                 key={appetizer.value}
                                 checked={this.state.appetizer===appetizer.value}
                                 onChange={this.updateFormField}
-                        > {appetizer.display} </input>
+                        /> {appetizer.display}
+                        </React.Fragment>
                     )}
                 </div>
                 {completed && !clicked && <button onClick={this.handleClick}> submit </button>}

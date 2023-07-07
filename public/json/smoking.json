@@ -1,5 +1,9 @@
 [
     {
+      "display": "Choose one",
+      "value": ""
+    },
+    {
       "display": "Smoking",
       "value": "smoking"
     },
